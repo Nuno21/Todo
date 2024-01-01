@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/775d186b2c.js" crossorigin="anonymous"></script>
+    <title>To Do List</title>
+    <link rel="icon" type="images/x-icon"/>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="task-counter" id="taskCounter">Tarefas: 0/0</div>
+        <div class="container">
+            <h2>To-Do List</h2>
+            <div class="addicionar">
+                <input class="input" id="myInput" placeholder="Adicionar uma tarefa...">
+                <span class="addBtn" onclick="newElement()">Adicionar</span> 
+            </div>
+        </div>
+
+        <div class="task-container">
+            <ul id="myUL" ondragover="allowDrop(event)" ondrop="drop(event)">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+   function newElement() {
+            var inputValue = document.getElementById("myInput").value;
+
+            if (inputValue === '') {
+                alert("Você deve escrever algo!");
+                return;
+            }
+
+            var taskContainer = document.getElementById("myUL");
+
+            var task = document.createElement("li");
+            task.className = "task";
+            task.textContent = inputValue;
+
+            // Adiciona um ouvinte de evento para a marcação/desmarcação da tarefa
+            task.addEventListener('click', function () {
+                toggleOptions(task);
+            }, false);
+
+            // Adiciona as opções
+            var options = document.createElement("div");
+            options.className = "options";
+
+            var checkOption = document.createElement("label");
+            checkOption.innerHTML = '<input type="checkbox"> Marcar como concluído';
+            var completionTime = document.createElement("div");
+            completionTime.className = "completion-time";
+
+            checkOption.querySelector('input').addEventListener('change', function () {
+                if (this.checked) {
+                    task.classList.add('checked');
+                    showCompletionTime(completionTime);
+                } else {
+                    task.classList.remove('checked');
+                    hideCompletionTime(completionTime);
+                }
+            });
+
+            var deleteButton = document.createElement("span");
+            deleteButton.textContent = "Eliminar";
+            deleteButton.className = "delete-button";
+            deleteButton.addEventListener('click', function () {
+                task.remove();
+            });
+
+            options.appendChild(checkOption);
+            options.appendChild(deleteButton);
+            options.appendChild(completionTime);
+            task.appendChild(options);
+
+            // Adiciona a tarefa ao contêiner
+            taskContainer.appendChild(task);
+
+            // Limpa o campo de entrada
+            document.getElementById("myInput").value = "";
+
+            updateTaskCounter();
+        }
+
+        function toggleOptions(task) 
+        {
+            var options = task.querySelector('.options');
+
+            if (options) 
+            {
+                options.style.display = (options.style.display === 'none') ? 'block' : 'none';
+                if (options.style.display === 'block')
+                {
+                    var siblingTask = task.nextElementSibling;
+
+                    if(siblingTask)
+                    {
+                        siblingTask.style.marginTop = options.offsetHeight + 'px';
+                    }
+                } else
+                {
+                    var siblingTask = task.nextElementSibling;
+
+                    if (siblingTask)
+                    {
+                        siblingTask.style.marginTop = '10px'
+                    }
+                }
+                
+            }
+
+            updateTaskCounter();
+        }
+
+        function showCompletionTime(completionTimeElement) 
+        {
+            var completionTime = new Date().toLocaleString();
+            completionTimeElement.textContent = 'Concluído em: ' + completionTime;
+
+            updateTaskCounter();
+        }
+
+        function hideCompletionTime(completionTimeElement) 
+        {
+            completionTimeElement.textContent = '';
+
+            updateTaskCounter();
+        }
+
+        function updateTaskCounter() 
+        {
+            var totalTasks = document.querySelectorAll('.task').length;
+            var completedTasks = document.querySelectorAll('.task.checked').length;
+
+            var counterElement = document.getElementById('taskCounter');
+            if (totalTasks === 0) {
+                counterElement.textContent = 'Não tem tarefas';
+            } else {
+                counterElement.textContent = `Tarefas: ${completedTasks}/${totalTasks}`;
+                if (completedTasks === totalTasks) 
+                {
+                    counterElement.innerHTML += '<br><span class="completed-tasks">Todas tarefas concluídas</span>';
+                }
+            }
+        }
+
+
+        document.getElementById("myInput").addEventListener("keyup", function (event) 
+        {
+            if (event.key === "Enter") 
+            {
+                newElement();
+            }
+        });
+  
+    </script>
+   
+</body>
+</html>
+
+

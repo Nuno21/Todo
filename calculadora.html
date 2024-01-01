@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="calculadora.css">
+    <script src="https://kit.fontawesome.com/775d186b2c.js" crossorigin="anonymous"></script>
+    <title>Calculadora</title>
+    <link rel="icon" type="images/x-icon"/>
+</head>
+
+<body>
+
+    <div class="container">
+        <input class="display" readonly id="display">
+        <div class="botoes" id="keys">
+            <button class="botao-opr" onclick="appendToDisplay('+')">+</button>
+            <button class="botao" onclick="appendToDisplay('7')">7</button>
+            <button class="botao" onclick="appendToDisplay('8')">8</button>
+            <button class="botao" onclick="appendToDisplay('9')">9</button>
+            <button class="botao-opr" onclick="appendToDisplay('-')">-</button>
+            <button class="botao" onclick="appendToDisplay('4')">4</button>
+            <button class="botao" onclick="appendToDisplay('5')">5</button>
+            <button class="botao" onclick="appendToDisplay('6')">6</button>
+            <button class="botao-opr" onclick="appendToDisplay('*')">*</button>
+            <button class="botao" onclick="appendToDisplay('1')">1</button>
+            <button class="botao" onclick="appendToDisplay('2')">2</button>
+            <button class="botao" onclick="appendToDisplay('3')">3</button>
+            <button class="botao-opr" onclick="appendToDisplay('/')">/</button>
+            <button class="botao" onclick="appendToDisplay('0')">0</button>
+            <button class="botao" onclick="appendToDisplay('.')">.</button>
+            <button class="botao" onclick="calculate()">=</button>
+            <button class="botao-opr" onclick="clearDisplay()">C</button>
+            
+        </div>
+    </div>
+    
+    <script>
+        const display = document.getElementById("display");
+
+        function appendToDisplay(input)
+        {
+            display.value += input;
+        }
+
+        function clearDisplay()
+        {
+            display.value = "";
+        }
+
+        function calculate()
+        {
+            try
+            {
+               display.value = eval(display.value); 
+            }
+            catch(error)
+            {
+                display.value = "ERROR";
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>
