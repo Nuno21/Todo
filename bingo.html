@@ -12,19 +12,30 @@
 
 <body>
 
-    <h1 class="titlo" id="titlo">BINGO</h1>
-    <section class="adicionar" id="adicionar">
-        <div class="container">
-            <h1>INSIRA OS VALORES</h1>
-            <input type="text" id="input"  placeholder="Digite um valor">
+
+
+    <section class="selection" id="selection">
+        <div class="selection-container">
+            <h1>Selectiona o tipo de bingo</h1>
             <div class="botoes">
-                <button onclick="newElement()">ADICIONAR</button>
-                <button onclick="play()">JOGAR</button>
-            </div> 
+                <button onclick="preencherArrayBingo()">Clássico</button>
+                <button onclick="personalizado()">Personalizado</button>
+            </div>
         </div>
+    </section>
 
-        <button onclick="preencherArrayBingo()">automatico</button>
-
+    <h1 class="titlo" id="titlo" style="display: none;">BINGO</h1>
+    <section class="adicionar" id="adicionar" style="display: none;">
+        <div class="options">
+            <div class="container">
+                <h1>INSIRA OS VALORES</h1>
+                <input type="text" id="input"  placeholder="Digite um valor">
+                <div class="botoes">
+                    <button onclick="newElement()">ADICIONAR</button>
+                    <button onclick="play()">JOGAR</button>
+                </div> 
+            </div>
+        </div>
         <div class="big-container">
             <div class="row">
                 <div class="column" onclick="removeByIndex(0)">
@@ -257,7 +268,7 @@
             <div class="clock" id="clock"></div>
         </div>
         
-        <div class="valorR">0</div>
+        <div class="valorR" id="valorR">0</div>
      
     </section>
 

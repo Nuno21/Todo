@@ -3,7 +3,7 @@ let bingo = [];
 const maxArraySize = 35;
 let gameWon = false;
 let tempoEsgotado = false; 
-let timer = 1200; 
+let timer = 600; 
 
 function newElement()
 {
@@ -67,11 +67,13 @@ function removeByIndex(index)
 
 function play()
 {
-    if(bingo.length >= 2)
+    if(bingo.length >= 25)
     {
         document.getElementById("bingo").style.display = 'block';
         document.getElementById("adicionar").style.display = 'none';
         document.getElementById("titlo").style.display = 'none';
+        document.getElementById("valorR").style.display = 'none';
+        document.getElementById("clock-container").style.display = 'none';
         bingoElements();
     }
     else
@@ -120,6 +122,7 @@ function preencherArrayBingo()
     document.getElementById('adicionar').style.display = 'none'
     document.getElementById('titlo').style.display = 'none'
     document.getElementById('bingo').style.display = 'block';
+    document.getElementById('selection').style.display = 'none';
     bingoElements();
     displayBingoValue();
 
@@ -253,6 +256,13 @@ document.querySelectorAll('.column').forEach(column =>
 
     });
 });
+
+function personalizado()
+{
+    document.getElementById('selection').style.display = 'none';
+    document.getElementById('titlo').style.display = 'flex';
+    document.getElementById('adicionar').style.display = 'flex';
+}
 
 
     

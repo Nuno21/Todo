@@ -14,6 +14,32 @@ body
     justify-content: center;
 }
 
+.selection
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    gap: 25px;
+}
+
+.selection-container
+{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid hwb(0 0% 100% / 0.5);
+    text-align: center;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.selection-container h1
+{
+    margin-bottom: 10px;
+}
+
 .titlo
 {
     display: flex;
@@ -70,6 +96,16 @@ body
     text-align: center;
     padding: 8px;
 }
+
+.botoes button
+{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+}
+
 
 .big-container
 {
@@ -294,4 +330,95 @@ body
     top: 50%;
     font-size: 60px; 
 }
+@media only screen and (max-width: 768px) 
+{
 
+    .adicionar
+    {
+        margin-top: 75px;
+        flex-direction: column;
+    }
+
+    .big-container
+    {
+        margin: 25px;
+    }
+
+    .titlo
+    {
+        display: none;
+    }
+
+    .container
+    {
+        height: 20vh;
+    }
+
+    .row
+    {
+        flex-direction: column;
+    }
+
+    .column 
+    {
+        width: 360px;
+        height: 90px;
+    }
+
+    .column p
+    {
+        font-size: 25px;
+    }
+
+    .bingo
+    {
+        flex-direction: column;
+    }
+
+    .container2 
+    {
+        height: 45vh;
+    }
+
+    .column2 
+    {
+        width: 65px;
+        height: 65px;
+    }
+
+    .column2 p
+    {
+        font-size: 15px;
+    }
+
+    .valorR
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 25px;
+    }
+
+    .clock-container
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+        font-size: 60px;
+    }
+
+    .box2
+    {
+        top: 35%;
+    }
+
+    .box3
+    {
+        top: 35%;
+    }
+}
