@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bingo.css">
+    <script src="https://kit.fontawesome.com/775d186b2c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>BINGO</title>
+    <link rel="icon" type="images/x-icon"/>
+</head>
+
+<body>
+
+    <h1 class="titlo" id="titlo">BINGO</h1>
+    <section class="adicionar" id="adicionar">
+        <div class="container">
+            <h1>INSIRA OS VALORES</h1>
+            <input type="text" id="input"  placeholder="Digite um valor">
+            <div class="botoes">
+                <button onclick="newElement()">ADICIONAR</button>
+                <button onclick="play()">JOGAR</button>
+            </div> 
+        </div>
+
+        <button onclick="preencherArrayBingo()">automatico</button>
+
+        <div class="big-container">
+            <div class="row">
+                <div class="column" onclick="removeByIndex(0)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(1)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(2)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(3)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(4)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" onclick="removeByIndex(5)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(6)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(7)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(8)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(9)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" onclick="removeByIndex(10)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(11)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(12)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(13)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(14)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" onclick="removeByIndex(15)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(16)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(17)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(18)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(19)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" onclick="removeByIndex(20)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(21)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(22)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(23)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(24)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" onclick="removeByIndex(25)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(26)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(27)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(28)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(29)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" onclick="removeByIndex(30)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(31)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(32)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(33)">
+                    <p></p>
+                </div>
+                <div class="column" onclick="removeByIndex(34)">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="listaBingo" class="lista"></div>
+    </section>
+
+    <section class="bingo" id="bingo">
+
+        <h1 class="titlo2">BINGO</h1>
+
+        <div class="box2" id="box2">
+            <h1>BINGO! Parabéns!</h1>
+            <button onclick="resetGame()">Jogar Novamente</button>
+        </div> 
+
+        <div class="box3" id="box3">
+            <h1>TEMPO ESGOTADO!
+                PERDEU!
+            </h1>
+            <button onclick="resetGame()">Jogar Novamente</button>
+        </div> 
+
+        <div class="container2">
+            <div class="row2">
+                <div class="column2" id="column2_0" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_1" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_2" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_3" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_4" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="column2" id="column2_5" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_6" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_7" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_8" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_9" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="column2" id="column2_10" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_11" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_12" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_13" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_14" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="column2" id="column2_15" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_16" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_17" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_18" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_19" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="column2" id="column2_20" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_21" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_22" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_23" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+                <div class="column2" id="column2_24" onclick="toggleColor(event)">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div id="clock-container" class="clock-container">
+            <div class="clock" id="clock"></div>
+        </div>
+        
+        <div class="valorR">0</div>
+     
+    </section>
+
+    <script src="bingo.js"></script>
+</body>
+</html>

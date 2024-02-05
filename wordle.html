@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="wordle.css">
+    <script src="https://kit.fontawesome.com/775d186b2c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>WORDLE</title>
+    <link rel="icon" type="images/x-icon"/>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box" id="box">
+            <h1>PREENCHA TODOS OS ESPAÇOS</h1>
+            <button onclick="ok()">OK</button>
+        </div> 
+
+        <div class="box3" id="box3">
+            <h1>Você perdeu! A palavra correta era:</h1>
+            <span id="correctWord"></span>
+            <button onclick="resetGame()">Jogar Novamente</button>
+        </div> 
+
+        <div class="box2" id="box2">
+            <h1>Você ganhou! Parabéns!</h1>
+            <button onclick="resetGame()">Jogar Novamente</button>
+        </div> 
+
+        <div class="row" id="row0" tabindex="0">
+            <div class="column">
+                <div type="text" id="myLetters0" class="input" maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters1" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters2" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters3" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters4" class="input"  maxlength="1"></div>
+            </div>
+        </div>
+        <div class="row" id="row1" tabindex="0">
+            <div class="column">
+                <div type="text" id="myLetters0" class="input" maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters1" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters2" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters3" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters4" class="input"  maxlength="1"></div>
+            </div>
+        </div>
+        <div class="row" id="row2" tabindex="0">
+            <div class="column">
+                <div type="text" id="myLetters0" class="input" maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters1" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters2" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters3" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters4" class="input"  maxlength="1"></div>
+            </div>
+        </div>
+        <div class="row" id="row3" tabindex="0">
+            <div class="column">
+                <div type="text" id="myLetters0" class="input" maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters1" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters2" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters3" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters4" class="input"  maxlength="1"></div>
+            </div>
+        </div>
+        <div class="row" id="row4" tabindex="0">
+            <div class="column">
+                <div type="text" id="myLetters1" class="input" maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters2" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters3" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters4" class="input"  maxlength="1"></div>
+            </div>
+            <div class="column">
+                <div type="text" id="myLetters5" class="input"  maxlength="1"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="teclado">
+        <div class="container2">
+            <div class="line">
+                <div class="button" onclick="fillLetter('Q')">Q</div>
+                <div class="button" onclick="fillLetter('W')">W</div>
+                <div class="button" onclick="fillLetter('E')">E</div>
+                <div class="button" onclick="fillLetter('R')">R</div>
+                <div class="button" onclick="fillLetter('T')">T</div>
+                <div class="button" onclick="fillLetter('Y')">Y</div>
+                <div class="button" onclick="fillLetter('U')">U</div>
+                <div class="button" onclick="fillLetter('I')">I</div>
+                <div class="button" onclick="fillLetter('O')">O</div>
+                <div class="button" onclick="fillLetter('P')">P</div>
+            </div>
+            <div class="line">
+                <div class="button" onclick="fillLetter('A')">A</div>
+                <div class="button" onclick="fillLetter('S')">S</div>
+                <div class="button" onclick="fillLetter('D')">D</div>
+                <div class="button" onclick="fillLetter('F')">F</div>
+                <div class="button" onclick="fillLetter('G')">G</div>
+                <div class="button" onclick="fillLetter('H')">H</div>
+                <div class="button" onclick="fillLetter('J')">J</div>
+                <div class="button" onclick="fillLetter('K')">K</div>
+                <div class="button" onclick="fillLetter('L')">L</div>
+                <div class="button" onclick="fillLetter('Ç')">Ç</div>
+            </div>
+            <div class="line1">
+                <div class="button2" onclick="performEnterAction()">ENTER</div>
+                <div class="button" onclick="fillLetter('Z')">Z</div>
+                <div class="button" onclick="fillLetter('X')">X</div>
+                <div class="button" onclick="fillLetter('C')">C</div>
+                <div class="button" onclick="fillLetter('V')">V</div>
+                <div class="button" onclick="fillLetter('B')">B</div>
+                <div class="button" onclick="fillLetter('N')">N</div>
+                <div class="button" onclick="fillLetter('M')">M</div>
+                <div class="button2"onclick="backspace()"><i class="material-icons">backspace</i></div>
+            </div>
+           
+        </div>
+    </section> 
+
+
+    <script src="wordle.js"></script>
+
+</body>
+</html>

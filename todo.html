@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="todo.css">
+    <script src="https://kit.fontawesome.com/775d186b2c.js" crossorigin="anonymous"></script>
+    <title>To Do List</title>
+    <link rel="icon" type="images/x-icon"/>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="task-counter" id="taskCounter">Tarefas: 0/0</div>
+        <div class="container">
+            <h2>Lista de Tarefas</h2>
+            <div class="addicionar">
+                <input class="input" id="myInput" placeholder="Adicionar uma tarefa...">
+                <span class="addBtn" onclick="newElement()">Adicionar</span> 
+            </div>
+            <div class="prioridades">
+                <span>PRIORIDADE</span>
+                <div class="radios">
+                    <input type="radio" name="prioridade" id="high"></button>
+                    <span class="alta">Alta</span>
+                    <input type="radio" name="prioridade" id="median"></button>
+                    <span class="media">Média</span>
+                    <input type="radio" name="prioridade" id="low"></button>
+                    <span class="baixa" >Baixa</span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="task-container">
+            <ul id="myUL" ondragover="allowDrop(event)" ondrop="drop(event)">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+   function newElement()
+    {
+            var inputValue = document.getElementById("myInput").value;
+
+            if (inputValue === '') 
+            {
+                alert("Você deve escrever algo!");
+                return;
+            }
+
+            var taskContainer = document.getElementById("myUL");
+
+            const highP = document.getElementById("high");
+            const medianP= document.getElementById("median");
+            const lowP = document.getElementById("low");
+
+            if (!highP.checked && !medianP.checked && !lowP.checked)
+             {
+                alert("Você deve escolher uma prioridade!");
+                return;
+            }
+
+            var task = document.createElement("li");
+            task.className = "task";
+            task.textContent = inputValue;
+
+            task.addEventListener('click', function () {
+                toggleOptions(task);
+            }, false);
+
+            // Adiciona as opções
+            var options = document.createElement("div");
+            options.className = "options";
+
+            var checkOption = document.createElement("label");
+            checkOption.innerHTML = '<input type="checkbox"> Marcar como concluído';
+            var completionTime = document.createElement("div");
+            completionTime.className = "completion-time";
+
+            checkOption.querySelector('input').addEventListener('change', function () {
+                if (this.checked) {
+                    task.classList.add('checked');
+                    showCompletionTime(completionTime);
+                    task.style.backgroundColor = 'green';
+                } else {
+                    task.classList.remove('checked');
+                    hideCompletionTime(completionTime);
+                }
+            });
+
+            var deleteButton = document.createElement("span");
+            deleteButton.textContent = "Eliminar";
+            deleteButton.className = "delete-button";
+            deleteButton.addEventListener('click', function () {
+                task.remove();
+            });
+
+            options.appendChild(checkOption);
+            options.appendChild(deleteButton);
+            options.appendChild(completionTime);
+            task.appendChild(options);
+
+            taskContainer.appendChild(task);
+
+            var priorityValue = 0;
+
+            if(highP.checked)
+            {
+                task.style.backgroundColor = '#bf0303';
+                task.style.color = 'white';
+                priorityValue = 3;
+            }
+            else if(medianP.checked)
+            {
+                task.style.backgroundColor = '#e9ab00';
+                task.style.color = 'white';
+                priorityValue = 2;
+            }
+            else if(lowP.checked)
+            {
+                task.style.backgroundColor = '#008d18';
+                task.style.color = 'white';
+                priorityValue = 1;
+            }
+
+            task.dataset.priority = priorityValue;
+
+            Array.from(taskContainer.children).sort((a,b) =>
+            {
+                const priorityA = parseInt(a.dataset.priority) || 0;
+                const priorityB = parseInt(b.dataset.priority) || 0;
+                return priorityB - priorityA;
+            }).forEach(task => taskContainer.appendChild(task));
+
+            document.getElementById("myInput").value = "";
+
+            updateTaskCounter();
+        }
+
+        function toggleOptions(task) 
+        {
+            var options = task.querySelector('.options');
+
+            if (options) 
+            {
+                options.style.display = (options.style.display === 'none' || options.style.display === '') ? 'block' : 'none';
+                if (options.style.display === 'block')
+                {
+                    var siblingTask = task.nextElementSibling;
+
+                    if(siblingTask)
+                    {
+                        siblingTask.style.marginTop ='100px';
+                    }
+                } 
+                else
+                {
+                    var siblingTask = task.nextElementSibling;
+
+                    if (siblingTask)
+                    {
+                        siblingTask.style.marginTop = '10px'
+                    }
+                }
+            }
+
+            updateTaskCounter();
+        }
+
+        function showCompletionTime(completionTimeElement) 
+        {
+            var completionTime = new Date().toLocaleString();
+            completionTimeElement.textContent = 'Concluído em: ' + completionTime;
+
+            updateTaskCounter();
+        }
+
+        function hideCompletionTime(completionTimeElement) 
+        {
+            completionTimeElement.textContent = '';
+
+            updateTaskCounter();
+        }
+
+        function updateTaskCounter() 
+        {
+            var totalTasks = document.querySelectorAll('.task').length;
+            var completedTasks = document.querySelectorAll('.task.checked').length;
+
+            var counterElement = document.getElementById('taskCounter');
+            if (totalTasks === 0) {
+                counterElement.textContent = 'Não tem tarefas';
+            } else {
+                counterElement.textContent = `Tarefas: ${completedTasks}/${totalTasks}`;
+                if (completedTasks === totalTasks) 
+                {
+                    counterElement.innerHTML += '<br><span class="completed-tasks">Todas tarefas concluídas</span>';
+                }
+            }
+        }
+
+
+        document.getElementById("myInput").addEventListener("keyup", function (event) 
+        {
+            if (event.key === "Enter") 
+            {
+                newElement();
+            }
+        });
+  
+    </script>
+   
+</body>
+</html>
+
+

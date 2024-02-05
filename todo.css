@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body 
+{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #d1d1d1;
+    align-items: center;
+    justify-content: center;
+}
+
+.content 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container 
+{
+    text-align: center;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 
+{
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.addicionar 
+{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input 
+{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.addBtn 
+{
+    padding: 10px 20px;
+    background: #4caf50;
+    color: #fff;
+    border: 1px solid #4caf50;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.addBtn:hover 
+{
+    background: #45a049;
+}
+
+.prioridades
+{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.prioridades span
+{
+    font-size: 15px;
+    color: #333;
+    text-align: left;
+}
+
+.radios
+{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+}
+
+span.alta
+{
+    color: #bf0303;
+}
+span.media
+{
+    color: #e9ab00;
+}
+span.baixa
+{
+    color: #008d18;
+}
+
+ul li 
+{
+    cursor: pointer;
+    position: relative;
+    padding: 12px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    width: 100%; 
+    box-sizing: border-box; 
+    border-radius: 4px;
+    border: 1px solid;
+}
+
+li
+{
+    margin-top: 10px;
+}
+
+li:nth-child(odd) 
+{
+    background: #f9f9f9;
+}
+
+li:hover 
+{
+    background: #ddd;
+}
+
+ul li.checked 
+{
+    background: #008d18;
+    color: #fff;
+    text-decoration: line-through;
+}
+  
+
+ul li.checked::before 
+{
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+
+
+.task-container 
+{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.task 
+{
+    cursor: pointer;
+    position: relative; /* Alteração para relative */
+    margin-bottom: 10px;
+    transition: margin-bottom 0.3s ease-in-out;
+}
+
+.task.checked 
+{
+    text-decoration: line-through;
+}
+
+.task:hover .options 
+{
+    max-height: 100px; 
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+}
+
+.options 
+{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 1;
+    grid-template-columns: repeat(2, 1fr); /* Define duas colunas iguais na grade */
+    gap: 5px; /* Espaço entre as opções */
+    color: #333; /* Cor do texto dentro da caixa de opções */
+    margin-top: 5px;
+    animation: fadeSlideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.options label,
+.delete-button {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.completion-time 
+{
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.delete-button 
+{
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.task-counter 
+{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color:#474747;
+   
+}
+
+.completed-tasks 
+{
+    color: #4caf50; 
+}
+
+@media (max-width: 768px) 
+{
+    .task-container
+    {
+        width: 55%;
+    }
+
+    .addicionar 
+    {
+        flex-direction: column; /* Stack flex items vertically on smaller screens */
+    }
+
+    .addBtn
+    {
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+}

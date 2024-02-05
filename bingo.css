@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body 
+{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #d1d1d1;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 550px;
+    font-size: 80px;
+    letter-spacing: 150px;
+
+}
+
+.adicionar
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    gap: 25px;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid hwb(0 0% 100% / 0.5);
+    text-align: center;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.container input
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.botoes
+{
+    display: flex;
+    gap: 5px;
+}
+
+.botoes button
+{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+}
+
+.big-container
+{
+    margin-top: 45px;
+    height: 25.2vh;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.column
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid hwb(0 0% 100% / 0.5);
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+}
+
+.btn
+{
+    display: none;
+}
+
+.column p
+{
+    font-size: 20px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.column p.textAnimation
+{
+    animation: textAn 0.5s ease-in-out;
+}
+
+@keyframes textAn
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.column:hover
+{
+    background-color: hsl(0, 0%, 90%);
+}
+
+.bingo
+{
+    display: none;
+}
+
+
+.titlo2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: px;
+    font-size: 80px;
+}
+
+
+.container2
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.row2
+{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.column2
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid hwb(0 0% 100% / 0.5);
+    border-radius: 8px;
+    width: 160px;
+    height: 160px;
+    
+}
+
+.column2 p
+{
+    font-size: 20px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+@keyframes animation
+{
+    0%
+    {
+        opacity: 0;
+        
+    }
+    100%
+    {
+        opacity: 1;
+        
+    }
+}
+
+.box2 
+{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    padding: 15px;
+    background-color: #198803fa;
+    border: 2px solid;
+    border-color: #fdfdfd;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: animation 0.3s ease-in;
+    display: none;
+}
+
+.box2 h1
+{
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.box2 button
+{
+    margin-top: 10px;
+    width: 150px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid hsl(0, 0%, 4%);
+    font-size: 20px;
+}
+
+.box3 
+{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 220px;
+    padding: 20px;
+    background-color: #880303fa;
+    border: 2px solid;
+    border-color: #fdfdfd;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: animation 0.3s ease-in;
+    display: none;
+}
+
+.box3 h1
+{
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.box3 button
+{
+    margin-top: 10px;
+    width: 150px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid hsl(0, 0%, 4%);
+    font-size: 20px;
+}
+
+.clock-container
+{
+    position: absolute;
+    left: 77.333%; 
+    top: 10%;
+    font-size: 100px; 
+}
+
+.valorR 
+{
+    position: absolute;
+    left: 80%; 
+    top: 50%;
+    font-size: 60px; 
+}
+

@@ -5,162 +5,276 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/775d186b2c.js" crossorigin="anonymous"></script>
-    <title>To Do List</title>
+    <title>Nuno Moreira</title>
     <link rel="icon" type="images/x-icon"/>
 </head>
 
 <body>
+    <nav class="navbar" id="navbar">
+        <div class="header">
+            <a href="index.html">
+                <h1>Nuno Moreira</h1>
+            </a> 
+        </div>
+        <div class="menu" id="toggle-button">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+        <ul class="nav-list" id="navi-list">
+            <li class="list-item">
+                <a href="#about">ABOUT</a>
+            </li>
+            <li class="list-item" >
+                <a href="#experience">EXPERIENCE</a>
+            </li>
+            <li class="list-item">  
+                <a href="#projects">PROJECTS</a>
+            </li>
+            <li class="list-item">  
+                <a href="#contact">CONTACT</a>
+            </li>
+        </ul>
+    </nav>
 
-    <div class="content">
-        <div class="task-counter" id="taskCounter">Tarefas: 0/0</div>
+    <section class="profile">
         <div class="container">
-            <h2>To-Do List</h2>
-            <div class="addicionar">
-                <input class="input" id="myInput" placeholder="Adicionar uma tarefa...">
-                <span class="addBtn" onclick="newElement()">Adicionar</span> 
+            <div class="image-container">
+                <img src="images/nuno.png">
+            </div>
+
+            <div class="column">
+                <p>Hi! I am...</p>
+                <h1>Nuno Moreira</h1>
+                <h2>Software Engineer</h2>
+            <div class="botoes">
+                <a href="CV/CV NUNO MOREIRA.pdf" download="CV">
+                    <button class="CV">Download CV</button>
+                </a>
+                
+                <button class="info" onclick="navigateToConcact()">Contact Info</button>
+            </div>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/nuno-moreira-a76713295/">
+                        <img src="images/linklinLogo.png">
+                    </a>
+                    
+                    <img src="images/linklinLogo.png">
+                </div>  
             </div>
         </div>
+    </section>
 
-        <div class="task-container">
-            <ul id="myUL" ondragover="allowDrop(event)" ondrop="drop(event)">
-
-            </ul>
+    <section class="about" id="about">
+        <div class="titlo">
+            <h1>ABOUT</h1>
+            <h3>Know More About Me!</h3>
         </div>
-    </div>
+        <div class="texto">My name is Nuno Moreira am graduated in Computer Engineering at Universidade Lusófona do Porto.
+            I am motivated to start a career in my area of training, so I consider your company to be a space in
+            which I can develop and deepen my knowledge, which is why I am applying for a possible job
+            opening or professional internship.
+        </div>
+
+        <div class="sContainer">
+              <div class="small-container">
+                <img src="images/1724957-200.png">
+                <h3>Education</h3>
+                <p>Degree in Software Engineering</p>
+            </div>
+        <div class="small-container">
+            <img src="images/bola.png">
+            <h3>Sports</h3>
+            <p>Staff of an Amatuer Futsal Club</p>
+        </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+
+        <div class="titlo">
+            <h1>EXPERIENCE</h1>
+            <h3>my programming experience ...</h3>
+        </div>
+
+        <div class="big-container">
+            <div class="medium-container">
+                <div class="title-container">
+                    Frontend Developments
+                </div>
+                <div class="exp">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/check.webp">
+                        </div>
+                        <div class="col">
+                            <h3>HTML</h3>
+                            <p>Experienced</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/check.webp">
+                        </div>
+                        <div class="col">
+                            <h3>CSS</h3>
+                            <p>Intermadiate</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/check.webp">
+                        </div>
+                        <div class="col">
+                            <h3>JAVASCRIPT</h3>
+                            <p>Experienced</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/check.webp">
+                        </div>
+                        <div class="col">
+                            <h3>REACT.JS</h3>
+                            <p>Intermadiate</p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            <div class="medium-container">
+                <div class="title-container">
+                    Backend Developments
+                </div>
+                <div class="exp">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/check.webp">
+                            </div>
+                            <div class="col">
+                                <h3>ASP.NET</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/check.webp">
+                            </div>
+                            <div class="col">
+                                <h3>MySQL</h3>
+                                <p>Intermadiate</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/check.webp">
+                            </div>
+                            <div class="col">
+                                <h3>C#</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects" id="projects">
+
+        <div class="titlo">
+            <h1>PROJECTS</h1>
+            <h3>what I have done...</h3>
+        </div>
+
+        <div class="big-container2">
+            <div class="medium-container2">
+                <div class="project">
+                    <img src="images/wordle-gator.png">
+                    <h2>PROJECT 1</h2>
+                    <div class="botoes">
+                        <button class="btn">GITHUB</button>
+                        <button class="btn" onclick="navigateToWordle()">DEMO</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="medium-container2">
+                <div class="project">
+                    <img src="images/wordle-gator.png">
+                    <h2>PROJECT 2</h2>
+                    <div class="botoes">
+                        <button class="btn">GITHUB</button>
+                        <button class="btn" onclick="navigateToBingo() ">DEMO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-container2">
+                <div class="project">
+                    <img src="images/wordle-gator.png">
+                    <h2>PROJECT 1</h2>
+                    <div class="botoes">
+                        <button class="btn">GITHUB</button>
+                        <button class="btn">DEMO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="titlo">
+            <h1>CONTACT</h1>
+            <h3>Contact me if needed...</h3>
+        </div>
+
+        <div class="xs-container">
+            <div class="email">
+                <img src="images/3178158.png">
+                <p>nuno.moreira21@gmail.com</p>
+            </div>
+            <div class="linklin">
+                <img src="images/linklinLogo.png">
+                <a href="https://www.linkedin.com/in/nuno-moreira-a76713295/">Linklin</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <div class="links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>Copyright 2024 Nuno Moreira. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script>
-   function newElement() {
-            var inputValue = document.getElementById("myInput").value;
 
-            if (inputValue === '') {
-                alert("Você deve escrever algo!");
-                return;
-            }
+    function navigateToWordle() 
+     {
+        window.location.href = 'wordle.html';
+     }
+     function navigateToBingo() 
+     {
+        window.location.href = 'bingo.html';
+     }
+     function navigateToConcact() 
+     {
+        window.location.href = '#contact';
+     } 
 
-            var taskContainer = document.getElementById("myUL");
+     const toggleButton = document.getElementById('toggle-button');
+     const naviList = document.getElementById('navi-list');
 
-            var task = document.createElement("li");
-            task.className = "task";
-            task.textContent = inputValue;
-
-            // Adiciona um ouvinte de evento para a marcação/desmarcação da tarefa
-            task.addEventListener('click', function () {
-                toggleOptions(task);
-            }, false);
-
-            // Adiciona as opções
-            var options = document.createElement("div");
-            options.className = "options";
-
-            var checkOption = document.createElement("label");
-            checkOption.innerHTML = '<input type="checkbox"> Marcar como concluído';
-            var completionTime = document.createElement("div");
-            completionTime.className = "completion-time";
-
-            checkOption.querySelector('input').addEventListener('change', function () {
-                if (this.checked) {
-                    task.classList.add('checked');
-                    showCompletionTime(completionTime);
-                } else {
-                    task.classList.remove('checked');
-                    hideCompletionTime(completionTime);
-                }
-            });
-
-            var deleteButton = document.createElement("span");
-            deleteButton.textContent = "Eliminar";
-            deleteButton.className = "delete-button";
-            deleteButton.addEventListener('click', function () {
-                task.remove();
-            });
-
-            options.appendChild(checkOption);
-            options.appendChild(deleteButton);
-            options.appendChild(completionTime);
-            task.appendChild(options);
-
-            // Adiciona a tarefa ao contêiner
-            taskContainer.appendChild(task);
-
-            // Limpa o campo de entrada
-            document.getElementById("myInput").value = "";
-
-            updateTaskCounter();
-        }
-
-        function toggleOptions(task) 
-        {
-            var options = task.querySelector('.options');
-
-            if (options) 
-            {
-                options.style.display = (options.style.display === 'none') ? 'block' : 'none';
-                if (options.style.display === 'block')
-                {
-                    var siblingTask = task.nextElementSibling;
-
-                    if(siblingTask)
-                    {
-                        siblingTask.style.marginTop = options.offsetHeight + 'px';
-                    }
-                } else
-                {
-                    var siblingTask = task.nextElementSibling;
-
-                    if (siblingTask)
-                    {
-                        siblingTask.style.marginTop = '10px'
-                    }
-                }
-                
-            }
-
-            updateTaskCounter();
-        }
-
-        function showCompletionTime(completionTimeElement) 
-        {
-            var completionTime = new Date().toLocaleString();
-            completionTimeElement.textContent = 'Concluído em: ' + completionTime;
-
-            updateTaskCounter();
-        }
-
-        function hideCompletionTime(completionTimeElement) 
-        {
-            completionTimeElement.textContent = '';
-
-            updateTaskCounter();
-        }
-
-        function updateTaskCounter() 
-        {
-            var totalTasks = document.querySelectorAll('.task').length;
-            var completedTasks = document.querySelectorAll('.task.checked').length;
-
-            var counterElement = document.getElementById('taskCounter');
-            if (totalTasks === 0) {
-                counterElement.textContent = 'Não tem tarefas';
-            } else {
-                counterElement.textContent = `Tarefas: ${completedTasks}/${totalTasks}`;
-                if (completedTasks === totalTasks) 
-                {
-                    counterElement.innerHTML += '<br><span class="completed-tasks">Todas tarefas concluídas</span>';
-                }
-            }
-        }
-
-
-        document.getElementById("myInput").addEventListener("keyup", function (event) 
-        {
-            if (event.key === "Enter") 
-            {
-                newElement();
-            }
+        toggleButton.addEventListener('click', () => {
+            naviList.classList.toggle('active');
         });
-  
+     
     </script>
-   
+
 </body>
 </html>
 
